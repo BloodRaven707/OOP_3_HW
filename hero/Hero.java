@@ -1,7 +1,7 @@
 package hero;
 
 
-public abstract class Hero implements HeroInterface {
+public abstract class Hero implements Comparable<Hero> {
     private String name;
 
     private int attack;
@@ -38,7 +38,7 @@ public abstract class Hero implements HeroInterface {
         this( name, attack, defense, shots, damage, damage, health, speed, delivery, magic);
     }
 
-    
+
     // Геттеры, для изменения значений приватных полей
     public String getName() { return name; }
     public int getAttack()  { return attack; }
@@ -65,8 +65,8 @@ public abstract class Hero implements HeroInterface {
 
     // Вывод в строковом виде
     public String toString() {
-        return String.format("%s: attack: %d, defense: %d, shots: %d, damage: %d-%d, health: %d, speed: %d, delivery: %d, magic: %d",
-            this.getClass().getName(),
+        return String.format("\n%s: attack: %d, defense: %d, shots: %d, damage: %d-%d, health: %d, speed: %d, delivery: %d, magic: %d",
+            this.name,
             this.attack,
             this.defense,
             this.shots,
@@ -76,5 +76,18 @@ public abstract class Hero implements HeroInterface {
             this.speed,
             this.delivery,
             this.magic);
+    }
+
+    // Сотировка по убыванию
+    @Override
+    public int compareTo( Hero o ) {
+        // return Integer.compare( this.speed, o.speed );
+
+        if ( this.speed < o.speed )
+            return 1;
+        else if ( this.speed > o.speed )
+            return -1;
+        else
+            return 0;
     }
 }

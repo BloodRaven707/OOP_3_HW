@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -47,8 +48,23 @@ public class OOP_HW_3 {
 
         // Выборка по скорости от максимальной к минимальное
         // for (int i = 0; i < count * 2; i++) {
-            
+            System.out.println( "\nlist_1 - Не сортированный" );
+            System.out.println( list_1 );
+
+            Collections.sort( list_1 );
+
+            System.out.println( "\nlist_1 - Сортированный" );
+            System.out.println( list_1 );
         //
+
+        System.out.println( "\nlist_2 - Не сортированный" );
+        System.out.println( list_2 );
+
+        Collections.sort( list_2 );
+
+        System.out.println( "\nlist_2 - Сортированный" );
+        System.out.println( list_2 );
+
     }
 
 
